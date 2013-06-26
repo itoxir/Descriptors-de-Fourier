@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		34BAA9D4177B31FC00F9D0E7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34BAA9D3177B31FC00F9D0E7 /* main.cpp */; };
 		34BAA9D6177B31FC00F9D0E7 /* FourierDescriptors.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34BAA9D5177B31FC00F9D0E7 /* FourierDescriptors.1 */; };
+		34BAA9E0177B332D00F9D0E7 /* libopencv_core.2.4.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BAA9DD177B332D00F9D0E7 /* libopencv_core.2.4.5.dylib */; };
+		34BAA9E1177B332D00F9D0E7 /* libopencv_highgui.2.4.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BAA9DE177B332D00F9D0E7 /* libopencv_highgui.2.4.5.dylib */; };
+		34BAA9E2177B332D00F9D0E7 /* libopencv_imgproc.2.4.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BAA9DF177B332D00F9D0E7 /* libopencv_imgproc.2.4.5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +31,9 @@
 		34BAA9D0177B31FC00F9D0E7 /* FourierDescriptors */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FourierDescriptors; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BAA9D3177B31FC00F9D0E7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34BAA9D5177B31FC00F9D0E7 /* FourierDescriptors.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FourierDescriptors.1; sourceTree = "<group>"; };
+		34BAA9DD177B332D00F9D0E7 /* libopencv_core.2.4.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.5.dylib; path = ../../../../../../../opt/local/lib/libopencv_core.2.4.5.dylib; sourceTree = "<group>"; };
+		34BAA9DE177B332D00F9D0E7 /* libopencv_highgui.2.4.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.4.5.dylib; path = ../../../../../../../opt/local/lib/libopencv_highgui.2.4.5.dylib; sourceTree = "<group>"; };
+		34BAA9DF177B332D00F9D0E7 /* libopencv_imgproc.2.4.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.4.5.dylib; path = ../../../../../../../opt/local/lib/libopencv_imgproc.2.4.5.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BAA9E0177B332D00F9D0E7 /* libopencv_core.2.4.5.dylib in Frameworks */,
+				34BAA9E1177B332D00F9D0E7 /* libopencv_highgui.2.4.5.dylib in Frameworks */,
+				34BAA9E2177B332D00F9D0E7 /* libopencv_imgproc.2.4.5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 		34BAA9C7177B31FC00F9D0E7 = {
 			isa = PBXGroup;
 			children = (
+				34BAA9DC177B32F800F9D0E7 /* OpenCV Framework */,
 				34BAA9D2177B31FC00F9D0E7 /* FourierDescriptors */,
 				34BAA9D1177B31FC00F9D0E7 /* Products */,
 			);
@@ -64,6 +74,16 @@
 				34BAA9D5177B31FC00F9D0E7 /* FourierDescriptors.1 */,
 			);
 			path = FourierDescriptors;
+			sourceTree = "<group>";
+		};
+		34BAA9DC177B32F800F9D0E7 /* OpenCV Framework */ = {
+			isa = PBXGroup;
+			children = (
+				34BAA9DD177B332D00F9D0E7 /* libopencv_core.2.4.5.dylib */,
+				34BAA9DE177B332D00F9D0E7 /* libopencv_highgui.2.4.5.dylib */,
+				34BAA9DF177B332D00F9D0E7 /* libopencv_imgproc.2.4.5.dylib */,
+			);
+			name = "OpenCV Framework";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,14 +206,28 @@
 		34BAA9DA177B31FC00F9D0E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /opt/local/include;
 			};
 			name = Debug;
 		};
 		34BAA9DB177B31FC00F9D0E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /opt/local/include;
 			};
 			name = Release;
 		};
