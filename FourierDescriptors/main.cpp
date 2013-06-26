@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Itoxi&Edu. All rights reserved.
 //
 
+// Comentari de prova
+
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
